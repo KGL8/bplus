@@ -1,0 +1,144 @@
+/* Unified BB Plus + Course Copilot palette, shared by the web app and drawer. */
+
+/* ── faces ─────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/static/fonts/SourceSerif4Var-Roman.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/static/fonts/SourceSerif4Var-Italic.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/static/fonts/MonaSansVF.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/static/fonts/MonaSansVF-Italic.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ── type ────────────────────────────────────────────────────────────── */
+  --font-read: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-ui: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Reading: 18.5px at 1.6, capped at 66 characters. A passage never runs the
+     full width of the window, whatever the window is doing. */
+  --read-size: 18.5px;
+  --read-leading: 1.6;
+  --measure: 66ch;
+
+  /* Interface scale. Ratio 1.2, rounded to whole pixels so rules land on the
+     pixel grid at 1x. */
+  --ui-xs: 11px;    /* condensed metadata, axis labels */
+  --ui-sm: 12px;    /* table headers, captions */
+  --ui-base: 14px;  /* navigation, buttons, form text */
+  --ui-md: 16px;
+  --serif-lg: 21px; /* subsection openers */
+  --serif-xl: 28px; /* section openers — the serif, larger. Not another face. */
+
+  --sidenote-size: 0.87em;
+  --sidenote-leading: 1.4;
+
+  /* Condensed width, for places density is the point and nowhere else. */
+  --wdth-condensed: 82;
+  --wdth-normal: 100;
+
+  /* ── space ───────────────────────────────────────────────────────────── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 18px;
+  --sp-5: 28px;
+  --sp-6: 44px;
+  --sp-7: 68px;
+
+  --margin-col: 280px;
+  --margin-gap: 40px;
+  --rule: 1px;
+
+  /* ── dark mode follows BB Plus's Blackboard-friendly neutral palette ── */
+  --ground: #202124;
+  --ground-raised: #2b2d31;
+  --ground-sunken: #17181a;
+
+  --ink: #f1f3f4;
+  --ink-2: #bdc1c6;
+  --ink-3: #9aa0a6;
+
+  --rule-colour: #3c4043;
+  --rule-strong: #5f6368;
+
+  --accent: #8ab4f8;
+  --accent-quiet: #669df6;
+
+  /* Status only. Desaturated on purpose: they report state, they do not
+     decorate. */
+  --status-engaged: #81c995;
+  --status-due: #fdd663;
+  --status-overdue: #f28b82;
+
+  --selection: rgba(138, 180, 248, 0.28);
+  color-scheme: dark;
+}
+
+/* ── light mode follows BB Plus's white, blue, and neutral palette ─────── */
+
+:root[data-theme="light"] {
+  --ground: #ffffff;
+  --ground-raised: #f8f9fa;
+  --ground-sunken: #f1f3f4;
+
+  --ink: #262626;
+  --ink-2: #3c4043;
+  --ink-3: #5f6368;
+
+  --rule-colour: #d7d9dc;
+  --rule-strong: #b8bdc3;
+
+  --accent: #1f5a94;
+  --accent-quiet: #174673;
+
+  --status-engaged: #137333;
+  --status-due: #8a5b00;
+  --status-overdue: #b3261e;
+
+  --selection: rgba(31, 90, 148, 0.18);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --ground: #ffffff;
+    --ground-raised: #f8f9fa;
+    --ground-sunken: #f1f3f4;
+    --ink: #262626;
+    --ink-2: #3c4043;
+    --ink-3: #5f6368;
+    --rule-colour: #d7d9dc;
+    --rule-strong: #b8bdc3;
+    --accent: #1f5a94;
+    --accent-quiet: #174673;
+    --status-engaged: #137333;
+    --status-due: #8a5b00;
+    --status-overdue: #b3261e;
+    --selection: rgba(31, 90, 148, 0.18);
+    color-scheme: light;
+  }
+}
